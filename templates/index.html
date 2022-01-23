@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Homepage</title>
+{% endblock %}
+
+{% block body %} 
+  <div class="h-100 d-flex justify-content-center align-items-center p-10">
+    <main role="main" class="border p-5">
+        <div class="jumbotron">
+          <div class="col-m-8 mx-auto">
+            <h1>Simple Blog page with Database connected</h1>
+            <p>A blog application where users can post blogs with title,content and author name and read other blogs</p>
+            <p>Some features of this app are CRUD features</p>
+            <ul>
+                <li>Create a blog</li>
+                <li>Read a Blog</li>
+                <li>Update a Blog</li>
+                <li>Delete a Blog</li>
+            </ul>
+            <p>
+              <a class="btn btn-primary" href="/posts" role="button">View Posts</a>
+            </p>
+          </div>
+        </div>
+    </main>
+  </div>
+{% endblock %}

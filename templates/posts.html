@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Posts page</title>
+{% endblock %}
+
+
+
+
+{% block body %} 
+<br>
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <h1>All posts</h1>
+    <a href="/addpost" class="btn btn-dark">New post+</a>
+</div>
+
+
+<hr></hr>
+
+    {% for post in posts %}
+        <div class="border p-4">
+            <h2>{{post.title}}</h2>
+
+            {% if post.author %}
+                <small>Written by {{post.author}} on {{post.date_posted}}</small>
+            {% else %}
+                <small>Written by unknown</small>
+            {% endif %}
+            <br>
+            <br>
+            <p style="white-space: pre-wrap">{{post.content}}</p>
+            <br>
+            <a class="btn btn-danger m-3" href="/posts/delete/{{post.id}}">Delete</a>
+            <a class="btn btn-primary m-3" href="/posts/edit/{{post.id}}">Edit</a>
+            <br>
+        </div>
+        <br>
+    {%endfor%}
+
+{% endblock %}
